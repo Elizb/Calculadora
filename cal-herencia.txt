@@ -1,0 +1,126 @@
+package calculadora;
+import javax.swing.*;
+import java.lang.Math;
+
+/**
+ *
+ * @author Alumno
+ */
+public class Calculadora {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        double n1=10;
+        double n2=5;
+        
+     //suma 
+     Suma sum=new suma(n1,n2);
+    sum.mostrarResultado();
+    
+    }
+    
+}
+
+
+
+
+
+public class Operacion {
+ double n1;
+    double n2;
+    double res;
+    char operacion;
+    
+    public Operacion(double n1, double n2, char operacion) {  
+        this.n1 = n1;
+        this.n2 = n2;
+        this.operacion = operacion;
+    } 
+    public void mostrarResultado(){ 
+        System.out.println(this.n1+" "+this.operacion+" "+this.n2+" = "+this.res);   
+    }
+    
+    
+    public double getN1() {
+        return n1;
+    }
+    public void setN1(double n1) {
+        this.n1 = n1;
+    }
+    public double getN2() {
+        return n2;
+    }
+    public void setN2(double n2) {
+        this.n2 = n2;
+    }
+
+    public char getOperacion() {
+        return operacion;
+    }
+
+    public void setOperacion(char operacion) {
+        this.operacion = operacion;
+    }
+
+    public double getRes() {
+        return res;
+    }
+
+    public void setRes(double res) {
+        this.res = res;
+    }   
+}
+
+
+public class  suma extends operacion{
+    
+double suma;
+
+public suma(double n1,double n2){
+    super(n1,n2, '+');
+    this.suma=n1+n2;
+    this.setRes(this.suma);
+}
+    
+}
+
+
+public class Resta extends operacion{
+double Resta;
+
+public Resta(double n1,double n2){
+    super(n1,n2, '-');
+    this.Resta=n1-n2;
+    this.setRes(this.Resta);
+   }  
+}
+
+
+
+public class Multiplicacion extends operacion{
+    
+    double Multiplicacion;
+
+public Multiplicacion(double n1,double n2){
+    super(n1,n2, '*');
+    this.Multiplicacion=n1*n2;
+    this.setRes(this.Multiplicacion);
+       }
+}
+
+
+
+public class Division extends operacion {
+    
+    double Division;
+
+public Division(double n1,double n2){
+    super(n1,n2, '/');
+    this.Division=n1/n2;
+    this.setRes(this.Division);
+      } 
+    
+}
